@@ -108,7 +108,7 @@ namespace LabReposicion.LZW.Compresion
         }
 
 
-        public string Descomprimir(int[] ArchivoComprimido, Dictionary<string, int> dicci)
+        private string Descomprimir(int[] ArchivoComprimido, Dictionary<string, int> dicci)
         {
             var DiccionarioTemp = new Dictionary<string, int>(dicci);
             var Actual = string.Empty;

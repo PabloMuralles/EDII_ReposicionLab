@@ -23,7 +23,7 @@ namespace LabReposicion.Controllers
                 using (var stream = new FileStream(filePath, FileMode.Create))
                     await file.CopyToAsync(stream);
            
-            LZW.Lectura.AlgoritomoCompresion Compress = new LZW.Lectura.AlgoritomoCompresion(nombre,file);
+            LZW.Compresion.AlgoritmoCompresion Compress = new LZW.Compresion.AlgoritmoCompresion(nombre,file);
             return Ok();
 
         }
@@ -36,7 +36,7 @@ namespace LabReposicion.Controllers
             if (file.Length > 0)
                 using (var stream = new FileStream(filePath, FileMode.Create))
                     await file.CopyToAsync(stream);
-            LZW.Lectura.AlgoritmoDescompresion Desscompress = new LZW.Lectura.AlgoritmoDescompresion(file, nombre);
+            LZW.Compresion.AlgoritmoDescompresion Desscompress = new LZW.Compresion.AlgoritmoDescompresion(file, nombre);
             return Ok();
 
         }
@@ -46,8 +46,8 @@ namespace LabReposicion.Controllers
         [Route("api/compression/LZW")]
         public ActionResult<string> Historial()
         {
-            var ListCompresion = LZW.Lectura.HistorialCompresion.Instance.ArchivosComprimidosPila;
-            var ListDescomresion = LZW.Lectura.HistorialCompresion.Instance.ArchivosDescomprimidosPils;
+            var ListCompresion = LZW.Compresion.HistorialCompresion.Instance.ArchivosComprimidosPila;
+            var ListDescomresion = LZW.Compresion.HistorialCompresion.Instance.ArchivosDescomprimidosPils;
             if (ListCompresion == null && ListDescomresion == null)
             {
                 return NotFound("No hay datos."); 
