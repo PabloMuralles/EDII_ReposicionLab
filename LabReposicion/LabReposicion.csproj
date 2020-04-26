@@ -4,5 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="LZW\" />
+    <Folder Include="Huffman\" />
+    <Folder Include="RSA\" />
+    <Folder Include="Transposicion\" />
+  </ItemGroup>
+
 
 </Project>
