@@ -1,0 +1,4 @@
+Grado 7
+Raiz 1
+Proxima posición Disponible: 2
+1|0|0|0|0|0|0|0|0|agua pura|menta|2|2|cocacola|Coca|menta|2|2|cocacola|Pepsi|menta|2|2|cocacola|
