@@ -19,5 +19,18 @@ namespace LabReposicion.ArbolB_estrella_.Controller
             }
             return BadRequest(ModelState);
         }
+        [HttpPost]
+        [Route("Bebida/Buscar")]
+        public ActionResult Buscar(string nombre)
+        {
+            if (ModelState.IsValid)
+            {
+                Bebida bebida = Estructura.ArbolB_estrella_.Instance.Busqueda(nombre);
+                if (bebida != null)
+                    return Ok(bebida);
+                return NotFound();
+            }
+            return BadRequest(ModelState);
+        }
     }
 }

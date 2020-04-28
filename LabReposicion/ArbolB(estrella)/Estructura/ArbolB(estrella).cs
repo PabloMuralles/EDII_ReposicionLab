@@ -329,12 +329,12 @@ namespace LabReposicion.ArbolB_estrella_.Estructura
         public void Escribir()
         {
             string Identificar_ID = string.Empty;
-            string CarpetaMetadata_S = Environment.CurrentDirectory;
-            if (!Directory.Exists(Path.Combine(CarpetaMetadata_S, "Metadata_Sucursal")))
+            string CarpetaMetadata = Environment.CurrentDirectory;
+            if (!Directory.Exists(Path.Combine(CarpetaMetadata, "Metadata_Bebida")))
             {
-                Directory.CreateDirectory(Path.Combine(CarpetaMetadata_S, "Metadata_Sucursal"));
+                Directory.CreateDirectory(Path.Combine(CarpetaMetadata, "Metadata_Bebida"));
             }
-            using (var writeStream = new FileStream(Path.Combine(CarpetaMetadata_S, "Metadata_Sucursal", "Sucursal.txt"), FileMode.OpenOrCreate))
+            using (var writeStream = new FileStream(Path.Combine(CarpetaMetadata, "Metadata_Bebida", "Bebida.txt"), FileMode.OpenOrCreate))
             {
                 using (var write = new StreamWriter(writeStream))
                 {
@@ -399,6 +399,12 @@ namespace LabReposicion.ArbolB_estrella_.Estructura
                     write.Close();
                 }
             }
+        }
+
+        public Bebida Busqueda(string Nombre)
+        {
+            Bebida bebida = raiz.Busqueda(Nombre, grado);
+            return bebida;
         }
     }
 }
