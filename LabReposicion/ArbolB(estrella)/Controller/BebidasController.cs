@@ -19,6 +19,14 @@ namespace LabReposicion.ArbolB_estrella_.Controller
             }
             return BadRequest(ModelState);
         }
+        [HttpGet]
+        [Route("api/registro")]
+        public ActionResult<string> Registro()
+        {
+           // var json = JsonConvert.SerializeObject(Estructura.ArbolB_Estrella_.Instance.IngresarRetorno());
+            return json;
+
+        }
         [HttpPost]
         [Route("Bebida/Buscar")]
         public ActionResult Buscar(string nombre)
