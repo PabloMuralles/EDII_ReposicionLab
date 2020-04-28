@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace LabReposicion.ArbolB_estrella_.Controller
 {
@@ -20,11 +21,11 @@ namespace LabReposicion.ArbolB_estrella_.Controller
             return BadRequest(ModelState);
         }
         [HttpGet]
-        [Route("api/registro")]
+        [Route("Bebida/registro")]
         public ActionResult<string> Registro()
         {
-           // var json = JsonConvert.SerializeObject(Estructura.ArbolB_Estrella_.Instance.IngresarRetorno());
-            return json;
+            var json = JsonConvert.SerializeObject(Estructura.ArbolB_estrella_.Instance.IngresarRetorno());
+           return json;
 
         }
         [HttpPost]

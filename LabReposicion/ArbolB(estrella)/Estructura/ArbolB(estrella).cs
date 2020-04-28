@@ -406,5 +406,66 @@ namespace LabReposicion.ArbolB_estrella_.Estructura
             Bebida bebida = raiz.Busqueda(Nombre, grado);
             return bebida;
         }
+        public List<Bebida> Registros = new List<Bebida>();
+        public List<Bebida> IngresarRetorno()
+        {
+            Registros.Clear();
+
+            RetornoInformacion(raiz);
+
+            return Registros;
+        }
+        public void RetornoInformacion(Nodo RaizResgistro)
+        {
+            if (RaizResgistro != null)
+            {                
+                RecorridoRegistros(raiz);
+                foreach (var Nods in ArbolListaRegistros)
+                {
+                    foreach (var bebidas in Nods.values)
+                    {
+                        Registros.Add(bebidas);
+                    }
+                }
+                ArbolListaRegistros.Clear();
+            }
+            else
+            {
+                throw new Exception("el arbol no existe");
+            }
+        }
+        List<Nodo> ArbolListaRegistros = new List<Nodo>();
+        private void RecorridoRegistros(Nodo RaizResgistros)
+        {
+            if (RaizResgistros != null)
+            {
+                if (ArbolListaRegistros.Contains(RaizResgistros) == false)
+                {
+
+                    ArbolListaRegistros.Add(RaizResgistros);
+                }
+
+                if (RaizResgistros.hijos[0] != null)
+                {
+                    for (int i = 0; i < grado; i++)
+                    {
+                        if (RaizResgistros.hijos[i] != null)
+                        {
+                            ArbolListaRegistros.Add(RaizResgistros.hijos[i]);
+                            RecorridoRegistros(RaizResgistros.hijos[i]);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                throw new Exception("el arbol no existe");
+            }
+        }
     }
 }
