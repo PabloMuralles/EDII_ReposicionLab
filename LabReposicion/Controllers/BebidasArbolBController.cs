@@ -11,10 +11,8 @@ namespace LabReposicion.Controllers
     
     public class BebidasArbolBController : ControllerBase
     {
-
         [HttpPost]
         [Route("api/insert")]
-
         public ActionResult Create([FromBody] ArbolB_Bebidas.Bebidas Soda)
         {
             if (ModelState.IsValid)
@@ -25,10 +23,8 @@ namespace LabReposicion.Controllers
             }
             return BadRequest(ModelState);
         }
-
-
         [HttpGet]
-        [Route("api/buscar/{nombre}")]
+        [Route("api/buscar")]
         public ActionResult Buscar(string nombre)
         {
             if (ModelState.IsValid)
@@ -40,25 +36,12 @@ namespace LabReposicion.Controllers
             }
             return BadRequest(ModelState);
         }
-
-
-
-
         [HttpGet]
         [Route("api/registro")]
         public ActionResult<string> Registro()
         {
-
-
-
             var json = JsonConvert.SerializeObject(ArbolB_Bebidas.ArbolB.Instance.IngresarRetorno());
             return json;
-
-
         }
-
-
-
-
     }
 }
