@@ -8,9 +8,8 @@ namespace CifrarLlaveCliente
 {
     class Cifrar
     {
-
         public string Cifrar2(BigInteger N, BigInteger D_E, byte[] llave)
-        { 
+        {
             var ClaveCifrada = string.Empty;
 
             var LlaveCifrada = new List<byte>();
@@ -26,8 +25,8 @@ namespace CifrarLlaveCliente
                     LlaveCifrada.Add(item2);
                     INT += Convert.ToInt32(item2);
                 }
-                 
-                var NuevoCaracter= Convert.ToString(Convert.ToChar(Convert.ToByte(INT)));
+
+                var NuevoCaracter = Convert.ToString(Convert.ToChar(Convert.ToByte(INT)));
                 ClaveCifrada += NuevoCaracter;
             }
             EscribirLlave(LlaveCifrada);
@@ -52,21 +51,26 @@ namespace CifrarLlaveCliente
             {
                 File.Delete(ruta);
             }
-            
-             using (var streamwriter = new FileStream(Path.Combine( @"c:\Temp", $"Contraseña.txt"), FileMode.OpenOrCreate))
-             {
+
+            using (var streamwriter = new FileStream(Path.Combine(@"c:\Temp", $"Contraseña.txt"), FileMode.OpenOrCreate))
+            {
                 using (var write = new BinaryWriter(streamwriter))
                 {
                     foreach (var item in ContraseñaCifrada)
                     {
                         write.Write(item);
                     }
-                    
+
                 }
 
-             }
+            }
 
         }
+
+
+
+
+
 
 
 
