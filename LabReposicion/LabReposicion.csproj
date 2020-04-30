@@ -6,7 +6,12 @@
 
   <ItemGroup>
     <Folder Include="Huffman\" />
+ 
     <Folder Include="Transposicion\" />
+ 
+    <Folder Include="RSA\" />
+ 
+ 
   </ItemGroup>
 
   <ItemGroup>
