@@ -20,7 +20,7 @@ namespace LabReposicion.Controllers
                 {
 
                     case "cesar":
-                        Transposicion.Cesar.Instance.Ingresar(Info.path, Info.fileName);
+                        Transposicion.Cesar.Instance.CifrarMensaje(Info.fileName, Info.path);
                         break;
                     case "zigzag":
                         Transposicion.ZigZag.Instance.Ingresar(Info.path, Info.carriles, Info.fileName);
@@ -50,7 +50,7 @@ namespace LabReposicion.Controllers
                 {
 
                     case "cesar": 
-                        Transposicion.Cesar.Instance.IngresoDescifrado(Info.path, Info.fileName);
+                        Transposicion.Cesar.Instance.DecifrarMensaje(Info.fileName,Info.path);
                         break;
                     case "zigzag":
                         Transposicion.ZigZag.Instance.IngresarDecifrado(Info.path, Info.carriles, Info.fileName);
