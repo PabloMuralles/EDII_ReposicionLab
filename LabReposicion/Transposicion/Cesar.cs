@@ -42,14 +42,14 @@ namespace LabReposicion.Transposicion
             }
             using (var writeStream = new FileStream(Path.Combine(CarpetaCesarCifrar, "CifradoCesar", $"{Nombre}.text"), FileMode.OpenOrCreate))
             {
-                string Texto = string.Empty;
-                foreach (var item in Texto_cifrado)
-                {
-                    Texto = Texto + Convert.ToString(item);
-                }
                 using (var write = new BinaryWriter(writeStream))
                 {
-                    write.Write(Texto);
+                    
+                    foreach (var item in Texto_cifrado)
+                    {
+                        write.Write(Convert.ToByte((item)));
+                    }
+               
                 }
             }
         }
@@ -62,14 +62,14 @@ namespace LabReposicion.Transposicion
             }
             using (var writeStream = new FileStream(Path.Combine(CarpetaCesarDesifrar, "DescifradoCesar", $"{Nombre}.text"), FileMode.OpenOrCreate))
             {
-                string Texto = string.Empty;
-                foreach (var item in Texto_cifrado)
-                {
-                    Texto = Texto + Convert.ToString(item);
-                }
                 using (var write = new BinaryWriter(writeStream))
                 {
-                    write.Write(Texto);
+                     
+                    foreach (var item in Texto_cifrado)
+                    {
+                        write.Write(Convert.ToByte((item)));
+                    }
+                     
                 }
             }
         }

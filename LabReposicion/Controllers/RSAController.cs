@@ -8,8 +8,7 @@ using Newtonsoft.Json;
 
 namespace LabReposicion.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+ 
     public class RSAController : ControllerBase
     {
 
@@ -31,7 +30,7 @@ namespace LabReposicion.Controllers
 
 
         [HttpPost]
-        [Route("cipher/caesar2")]
+        [Route("cipher/cesar2")]
         public ActionResult Cipher([FromBody] RSA.Informacion Info)
         {
             if (ModelState.IsValid)
@@ -50,7 +49,7 @@ namespace LabReposicion.Controllers
         }
 
         [HttpPost]
-        [Route("Decipher/caesar2")]
+        [Route("Decipher/cesar2")]
         public ActionResult Decipher([FromBody] RSA.Informacion Info)
         {
             if (ModelState.IsValid)

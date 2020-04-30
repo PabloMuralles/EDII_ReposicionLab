@@ -28,8 +28,8 @@ namespace LabReposicion.Controller
            return json;
 
         }
-        [HttpPost]
-        [Route("Bebida/Buscar")]
+        [HttpGet]
+        [Route("Bebida/Buscar/{nombre}")]
         public ActionResult Buscar(string nombre)
         {
             if (ModelState.IsValid)

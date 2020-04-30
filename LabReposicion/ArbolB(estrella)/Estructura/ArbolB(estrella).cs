@@ -424,7 +424,11 @@ namespace LabReposicion.ArbolB_estrella_.Estructura
                 {
                     foreach (var bebidas in Nods.values)
                     {
-                        Registros.Add(bebidas);
+                        if (bebidas != null)
+                        {
+                            Registros.Add(bebidas);
+
+                        }
                     }
                 }
                 ArbolListaRegistros.Clear();

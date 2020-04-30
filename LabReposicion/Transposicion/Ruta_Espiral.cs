@@ -116,7 +116,7 @@ namespace LabReposicion.Transposicion
             {
                 Directory.CreateDirectory(Path.Combine(CarpetaEspiralCifrado, "CifradoEspiral"));
             }
-            using (var writeStream = new FileStream(Path.Combine(CarpetaEspiralCifrado, "CifradoEspiral", $"{nombre_}.text"), FileMode.OpenOrCreate))
+            using (var writeStream = new FileStream(Path.Combine(CarpetaEspiralCifrado, "CifradoEspiral", $"{nombre_}.txt"), FileMode.OpenOrCreate))
             {
                 using (var writer = new BinaryWriter(writeStream))
                 {
@@ -225,7 +225,7 @@ namespace LabReposicion.Transposicion
             {
                 Directory.CreateDirectory(Path.Combine(CarpetaEspiralDescifrado, "DescifradoEspiral"));
             }
-            using (var writeStream = new FileStream(Path.Combine(CarpetaEspiralDescifrado, "DescifradoEspiral", $"{Nombre}.text"), FileMode.OpenOrCreate))
+            using (var writeStream = new FileStream(Path.Combine(CarpetaEspiralDescifrado, "DescifradoEspiral", $"{Nombre}.txt"), FileMode.OpenOrCreate))
             {
                 using (var writer = new BinaryWriter(writeStream))
                 {

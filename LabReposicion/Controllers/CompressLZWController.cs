@@ -9,8 +9,7 @@ using Newtonsoft.Json;
 
 namespace LabReposicion.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+ 
     public class CompressLZWController : ControllerBase
     {
         
@@ -43,7 +42,7 @@ namespace LabReposicion.Controllers
 
 
         [HttpGet]
-        [Route("api/compression/LZW")]
+        [Route("compression/LZW")]
         public ActionResult<string> Historial()
         {
             var ListCompresion = LZW.Compresion.HistorialCompresion.Instance.ArchivosComprimidosPila;

@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LabReposicion.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+ 
     public class TransposicionController : ControllerBase
     {
         [HttpPost]
@@ -27,7 +26,7 @@ namespace LabReposicion.Controllers
                         Transposicion.ZigZag.Instance.Ingresar(Info.path, Info.carriles, Info.fileName);
                         break;
                     case "Vertical":
-                        Transposicion.Ruta_Espiral.Instance.Ingresar(Info.path, Info.filas, Info.fileName);
+                        Transposicion.Ruta_Vertical.Instance.Ingresar(Info.path, Info.filas, Info.fileName);
                         break;
                     case "espiral":
                         Transposicion.Ruta_Espiral.Instance.Ingresar(Info.path, Info.filas, Info.fileName);
@@ -50,7 +49,7 @@ namespace LabReposicion.Controllers
                 switch ($"{nombre}")
                 {
 
-                    case "Cesar": 
+                    case "cesar": 
                         Transposicion.Cesar.Instance.IngresoDescifrado(Info.path, Info.fileName);
                         break;
                     case "zigzag":

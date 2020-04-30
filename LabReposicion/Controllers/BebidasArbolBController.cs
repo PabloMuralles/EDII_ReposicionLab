@@ -24,7 +24,7 @@ namespace LabReposicion.Controllers
             return BadRequest(ModelState);
         }
         [HttpGet]
-        [Route("api/buscar")]
+        [Route("api/buscar/{nombre}")]
         public ActionResult Buscar(string nombre)
         {
             if (ModelState.IsValid)
