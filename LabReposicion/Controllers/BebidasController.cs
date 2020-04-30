@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace LabReposicion.ArbolB_estrella_.Controller
+namespace LabReposicion.Controller
 {
     public class BebidasController : ControllerBase
     {
         [HttpPost]
         [Route("Bebida/insertar")]
-        public ActionResult Insertar([FromBody] Bebida Soda)
+        public ActionResult Insertar([FromBody] ArbolB_estrella_.Bebida Soda)
         {
             if (ModelState.IsValid)
             {
-                Estructura.ArbolB_estrella_.Instance.Insertar(Soda.Nombre, Soda.Sabor, Soda.Volumen, Soda.Precio, Soda.Casa_Productora);
+                ArbolB_estrella_.Estructura.ArbolB_estrella_.Instance.Insertar(Soda.Nombre, Soda.Sabor, Soda.Volumen, Soda.Precio, Soda.Casa_Productora);
                 return Ok();
             }
             return BadRequest(ModelState);
@@ -24,7 +24,7 @@ namespace LabReposicion.ArbolB_estrella_.Controller
         [Route("Bebida/registro")]
         public ActionResult<string> Registro()
         {
-            var json = JsonConvert.SerializeObject(Estructura.ArbolB_estrella_.Instance.IngresarRetorno());
+            var json = JsonConvert.SerializeObject(ArbolB_estrella_.Estructura.ArbolB_estrella_.Instance.IngresarRetorno());
            return json;
 
         }
@@ -34,7 +34,7 @@ namespace LabReposicion.ArbolB_estrella_.Controller
         {
             if (ModelState.IsValid)
             {
-                Bebida bebida = Estructura.ArbolB_estrella_.Instance.Busqueda(nombre);
+                ArbolB_estrella_.Bebida bebida = ArbolB_estrella_.Estructura.ArbolB_estrella_.Instance.Busqueda(nombre);
                 if (bebida != null)
                     return Ok(bebida);
                 return NotFound();
