@@ -1,5 +1,5 @@
 # EDII_ReposicionLab
-Santiago Bocel 1076818
+Santiago Bocel 1076818 \n
 Pablo Muralles 1113818
 Laboratorios Escogidos
 Lab 1: Arbol B
