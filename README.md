@@ -4,7 +4,7 @@
 
 -Pablo Muralles 1113818
 
-Laboratorios Escogidos
+Laboratorios Escogidos:
 
 -Lab 1: Arbol B
 
