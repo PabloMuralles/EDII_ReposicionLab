@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="LZW\" />
     <Folder Include="Huffman\" />
     <Folder Include="Transposicion\" />
   </ItemGroup>
