@@ -51,8 +51,6 @@ namespace LabReposicion.Transposicion
             ObtenerTextoArchivoDecifrado(ArchivoLeido);
             diccionarioCifrado.Clear();
         }
-
-
         public void generarDiccionarioOriginal()
         {
             if (diccionarioOriginalVacio)
@@ -160,10 +158,6 @@ namespace LabReposicion.Transposicion
                 }
             }
         }
-
-
-
-
         public void ObtenerTextoArchivoDecifrado(string archivoLeido)
         {
             var bufferLength = 10000;
@@ -178,7 +172,7 @@ namespace LabReposicion.Transposicion
 
 
 
-            using (var writeStream = new FileStream(Path.Combine(CarpetaCompress, "DecipherCesar", $"{RutaUsuario}.txt  "), FileMode.OpenOrCreate))
+            using (var writeStream = new FileStream(Path.Combine(CarpetaCompress, "DecipherCesar", $"{RutaUsuario}.txt"), FileMode.OpenOrCreate))
             {
                 using (var writer = new BinaryWriter(writeStream))
                 {
