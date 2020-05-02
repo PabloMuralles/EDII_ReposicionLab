@@ -20,7 +20,7 @@ namespace CifrarLlaveCliente
             var LlaveBytes = Cifrar.LlaveEnBytes(Llave);
 
             Console.WriteLine(@"Su clave cifrada es: " + "\"" + Cifrar.Cifrar2(n, de, LlaveBytes) + "\"");
-            Console.WriteLine("Su contraseña se escribio en el temp de la computadora en un txt");
+            Console.WriteLine("Su contraseña se escribio en el debug de la consola en un txt ");
             Console.WriteLine(" ");
             Console.WriteLine("Ingrese 1 para repetir proceso o 0 para salir");
             string x = Console.ReadLine();
@@ -39,7 +39,7 @@ namespace CifrarLlaveCliente
                 LlaveBytes = Cifrar.LlaveEnBytes(Llave);
 
                 Console.WriteLine(@"Su clave cifrada es: " + "\"" + Cifrar.Cifrar2(n, de, LlaveBytes) + "\"");
-                Console.WriteLine("Su contraseña se escribio en el temp de la computadora en un txt");
+                Console.WriteLine("Su contraseña se escribio en el debug de la consola en un txt ");
                 Console.WriteLine(" ");
                 Console.WriteLine("Ingrese 1 para repetir proceso o 0 para salir");
                 x = Console.ReadLine();

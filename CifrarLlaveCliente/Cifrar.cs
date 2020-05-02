@@ -46,13 +46,15 @@ namespace CifrarLlaveCliente
 
         public void EscribirLlave(List<byte> ContraseñaCifrada)
         {
-            var ruta = Path.Combine(@"c:\Temp", $"Contraseña.txt");
+            string CarpetaCompress = Environment.CurrentDirectory;
+
+            var ruta = Path.Combine(CarpetaCompress, $"Contraseña.txt");
             if (File.Exists(ruta))
             {
                 File.Delete(ruta);
             }
 
-            using (var streamwriter = new FileStream(Path.Combine(@"c:\Temp", $"Contraseña.txt"), FileMode.OpenOrCreate))
+            using (var streamwriter = new FileStream(Path.Combine(CarpetaCompress, $"Contraseña.txt"), FileMode.OpenOrCreate))
             {
                 using (var write = new BinaryWriter(streamwriter))
                 {
